@@ -1,0 +1,11 @@
+c:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\Domain.pdb
+c:\Users\AngeloRazafindrakoto\OneDrive - OPPORTUNITY\Desktop\testStaging\Domain\obj\Debug\net7.0\ref\Domain.dll
