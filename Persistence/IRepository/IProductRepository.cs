@@ -1,9 +1,12 @@
 ﻿using Domain;
 
-namespace Persistence.IRepository;
-
-
-public interface IProductRepository
+namespace Persistence.IRepository
 {
-     Task<List<Product>> getAllProduct();
+    public interface IProductRepository
+    {
+        Task<List<Product>> getAllProduct();
+    }
+
 }
+
+

@@ -3,13 +3,16 @@ using Application;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API;
-
-public class ProductController : BaseApiController
+namespace API
 {
-    [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetProducts()
+    public class ProductController : BaseApiController
     {
-        return await Mediator.Send(new List.Query());
+        [HttpGet]
+        public async Task<ActionResult<List<Product>>> GetProducts()
+        {
+            return await Mediator.Send(new List.Query());
+        }
     }
+
 }
+

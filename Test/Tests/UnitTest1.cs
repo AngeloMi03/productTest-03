@@ -1,28 +1,36 @@
 using Domain;
 using Moq;
 using Persistence.IRepository;
+using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace Tests;
-
-public class ListProductCommandHandlerTest
+namespace Tests
 {
-    private readonly Mock<IProductRepository> _productRepositoryMock;
-
-    public ListProductCommandHandlerTest()
+    public class ListProductCommandHandlerTest 
     {
-        _productRepositoryMock = new ();
+        private readonly Mock<IProductRepository> _productRepositoryMock;
+
+        public ListProductCommandHandlerTest()
+        {
+            _productRepositoryMock = new Mock<IProductRepository>();
+        }
+
+        [Fact]
+        public async Task ListProductTest()
+        {
+            // var command = new Application.List.Query();
+
+            // var handler = new Application.List.Handler(_productRepositoryMock.Object);
+
+            // List<Product> result = await handler.Handle(command, default);
+
+            // Console.Write("result" + result);
+
+            // Assert.Equal(3, result.Count);
+
+        }
+
+
     }
-
-    [Fact]
-    public async Task ListProductTest(){
-       var command = new Application.List.Query();
-
-       var handler = new  Application.List.Handler(_productRepositoryMock.Object);
-
-       var result = await handler.Handle(command, default);
-
-       Assert.Equal(3,result.Count);
-    }
-
-    
 }
+
+

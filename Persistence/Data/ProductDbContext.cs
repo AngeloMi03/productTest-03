@@ -1,14 +1,17 @@
 ﻿using Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Persistence.Data;
-
-
-public class ProductDbContext : DbContext
+namespace Persistence.Data
 {
-    public ProductDbContext(DbContextOptions options) : base(options)
+    public class ProductDbContext : DbContext
     {
+        public ProductDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
+        public DbSet<Product> Productes { get; set; }
     }
 
-    public DbSet<Product> Productes {get; set;}
 }
+
+

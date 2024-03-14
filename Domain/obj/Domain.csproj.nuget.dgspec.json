@@ -1,32 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\AngeloRazafindrakoto\\OneDrive - OPPORTUNITY\\Desktop\\testStaging\\Domain\\Domain.csproj": {}
+    "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "c:\\Users\\AngeloRazafindrakoto\\OneDrive - OPPORTUNITY\\Desktop\\testStaging\\Domain\\Domain.csproj": {
+    "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\AngeloRazafindrakoto\\OneDrive - OPPORTUNITY\\Desktop\\testStaging\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "c:\\Users\\AngeloRazafindrakoto\\OneDrive - OPPORTUNITY\\Desktop\\testStaging\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\AngeloRazafindrakoto\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\AngeloRazafindrakoto\\OneDrive - OPPORTUNITY\\Desktop\\testStaging\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\geloh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\AngeloRazafindrakoto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\geloh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +41,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -55,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -2,31 +2,35 @@
 using MediatR;
 using Persistence.IRepository;
 
-namespace Application;
-
-public record List
+namespace Application
 {
-    
-    public  record Query : IRequest<List<Product>>
+    public class List
     {
 
-    }
-
-    internal sealed class Handler : IRequestHandler<Query, List<Product>>
-    {
-        private readonly IProductRepository _productRepository;
-        public Handler(IProductRepository productRepository)
+        public class Query : IRequest<List<Product>>
         {
-            _productRepository = productRepository;
+
         }
 
-        public async Task<List<Product>> Handle(Query request, CancellationToken cancellationToken)
+        public class Handler : IRequestHandler<Query, List<Product>>
         {
-            var productsList = await _productRepository.getAllProduct();
+            private readonly IProductRepository _productRepository;
+            public Handler(IProductRepository productRepository)
+            {
+                _productRepository = productRepository;
+            }
 
-            return productsList;
+            public async Task<List<Product>> Handle(Query request, CancellationToken cancellationToken)
+            {
+                var productsList = await _productRepository.getAllProduct();
+
+                return productsList;
+            }
         }
     }
+
 }
+
+
 
 

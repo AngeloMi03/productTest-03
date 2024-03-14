@@ -1,0 +1,3 @@
+C:\Users\geloh\Desktop\test\productTest-03\Domain\bin\Debug\net6.0\publish\Domain.dll
+C:\Users\geloh\Desktop\test\productTest-03\Domain\bin\Debug\net6.0\publish\Domain.deps.json
+C:\Users\geloh\Desktop\test\productTest-03\Domain\bin\Debug\net6.0\publish\Domain.pdb
