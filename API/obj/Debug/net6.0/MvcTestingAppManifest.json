@@ -1,5 +1,5 @@
 {
-  "Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\geloh\\Desktop\\test\\productTest-03\\Application",
-  "Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\geloh\\Desktop\\test\\productTest-03\\Domain",
-  "Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "c:\\Users\\geloh\\Desktop\\test\\productTest-03\\Persistence"
+  "Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Application",
+  "Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Domain",
+  "Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\geloh\\Desktop\\test\\productTest-03\\Persistence"
 }

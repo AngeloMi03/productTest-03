@@ -5,7 +5,10 @@ namespace Domain
 {
     public class Product
     {
+        [Required]
         public string Name { get; set; }
+
+        [Required]
         public string Matricule { get; set; }
         [Key]
         public Guid Slug { get; set; }

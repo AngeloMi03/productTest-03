@@ -4,7 +4,9 @@ namespace Persistence.IRepository
 {
     public interface IProductRepository
     {
-        Task<List<Product>> getAllProduct();
+        Task<IQueryable<Product>> getAllProduct();
+
+        Task<bool?> addProduct(Product product);
     }
 
 }

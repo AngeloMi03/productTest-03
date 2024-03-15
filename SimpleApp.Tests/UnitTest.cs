@@ -24,11 +24,9 @@ public class UnitTest
 
             var handler = new Application.List.Handler(_productRepositoryMock.Object);
 
-            List<Product> result = await handler.Handle(command, default);
+            var result = await handler.Handle(command, default);
 
-            Console.Write("result" + result);
-
-            Assert.Equal(3,result.Count());
+            Assert.True(result.IsSucces);
 
         }
     

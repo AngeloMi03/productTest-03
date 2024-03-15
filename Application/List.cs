@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Application.Helpers;
+using Domain;
 using MediatR;
 using Persistence.IRepository;
 
@@ -7,12 +8,12 @@ namespace Application
     public class List
     {
 
-        public class Query : IRequest<List<Product>>
+        public class Query : IRequest<Result<PaginationList<Product>>>
         {
-
+            public  ParamsPagination pageParmams { get; set; }
         }
 
-        public class Handler : IRequestHandler<Query, List<Product>>
+        public class Handler : IRequestHandler<Query, Result<PaginationList<Product>>>
         {
             private readonly IProductRepository _productRepository;
             public Handler(IProductRepository productRepository)
@@ -20,11 +21,14 @@ namespace Application
                 _productRepository = productRepository;
             }
 
-            public async Task<List<Product>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<PaginationList<Product>>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var productsList = await _productRepository.getAllProduct();
-
-                return productsList;
+                
+                return Result<PaginationList<Product>>.Success(
+                     await PaginationList<Product>.createAsync(productsList, 
+                      request.pageParmams.PageNumber, request.pageParmams.PageSize)
+                );
             }
         }
     }
