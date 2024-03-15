@@ -1,6 +1,7 @@
 ﻿using Application.Helpers;
 using Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Persistence.IRepository;
 
 namespace Application
@@ -23,10 +24,12 @@ namespace Application
 
             public async Task<Result<PaginationList<Product>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var productsList = await _productRepository.getAllProduct();
+                var productsList = await _productRepository.getAllProductasQuerable();
+
+                var  query = productsList.OrderByDescending(x => x.Date_Create);
                 
                 return Result<PaginationList<Product>>.Success(
-                     await PaginationList<Product>.createAsync(productsList, 
+                     await PaginationList<Product>.createAsync(query, 
                       request.pageParmams.PageNumber, request.pageParmams.PageSize)
                 );
             }

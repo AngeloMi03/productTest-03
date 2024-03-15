@@ -2,18 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.Helpers;
 using Domain;
 using MediatR;
 using Persistence.IRepository;
 
-namespace Application
+namespace Application.Helpers
 {
-    public class Add
+    public class Edit
     {
         public record Command : IRequest<Result<Unit>>
         {
-            public Product? Product { get; set; } //DTO
+            public Product? Product { get; set; }
         }
 
         internal sealed class Handler : IRequestHandler<Command, Result<Unit>>
@@ -26,30 +25,28 @@ namespace Application
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                bool product = await _productRepository.findProductByMatricule(request.Product!);
+                var product = await _productRepository.findProductBySlug(request.Product!.Slug);
 
-                if(product) return Result<Unit>.Failure("Product already exist");
+                if(product == null) return Result<Unit>.Failure("Product not found");
 
-                var newProduct = new Product
-                {
-                    Slug = new Guid(),
-                    Name = request.Product!.Name,
-                    Matricule = request.Product.Matricule,
-                    Date_Create = DateTime.Now,
-                    Date_Edit = DateTime.Now
-                };
 
-                await _productRepository.addProduct(newProduct);
+                 request.Product.Date_Edit = DateTime.Now;
+                 
+                  //_mapper.Map(request.Product, product);
+                  // _productRepository.editProduct( product);
+
+                _productRepository.editProduct(request.Product);
 
                 var Success = await _productRepository.Complete();
 
                 var result = Success switch
                 {
                     true => Result<Unit>.Success(Unit.Value),
-                    _ => Result<Unit>.Failure("Failed to Add product"),
+                    _ => Result<Unit>.Failure("Failed to update product"),
                 };
 
                 return result;
+
             }
         }
     }

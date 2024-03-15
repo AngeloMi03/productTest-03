@@ -16,10 +16,24 @@ namespace API
 
 
         [HttpPost]
-        public async Task<ActionResult<bool>> AddProducts([FromBody] Product product)//productDTO
+        public async Task<ActionResult> AddProducts([FromBody] Product product)//productDTO
         {
             return HandleResult(await Mediator.Send(new Add.Command(){Product = product}));
         }
+
+        [HttpDelete("{slug}")]
+        public async Task<ActionResult> DeleteProducts(Guid slug)//productDTO
+        {
+            return HandleResult(await Mediator.Send(new Delete.Command(){Slug = slug}));
+        }
+
+       [HttpPut("{slug}")]
+       public async Task<IActionResult> EditActivity(Guid slug, Product product)
+       {
+           product.Slug = slug;
+           return HandleResult(await Mediator.Send(new Edit.Command(){Product = product}));
+       }
+
 
 
     }

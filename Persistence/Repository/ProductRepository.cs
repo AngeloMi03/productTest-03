@@ -13,34 +13,47 @@ namespace Persistence
             _dbContext = dbContext;
         }
 
-        public async Task<bool?> addProduct(Product product) //ProductDtO
+        public async Task addProduct(Product product) //ProductDtO
         {
-            var p = await _dbContext.Productes.AnyAsync(x => x.Matricule == product.Matricule);
 
-            if(p == true) return null;
+            await _dbContext.Productes.AddAsync(product);
 
-            var newProduct = new Product
-            {
-                Slug = new Guid(),
-                Name = product.Name,
-                Matricule = product.Matricule,
-                Date_Create = DateTime.Now,
-                Date_Edit = DateTime.Now
-            };
-
-            _dbContext.Productes.Add(newProduct);
-
-            bool result = await _dbContext.SaveChangesAsync() > 0;
-
-            return result;
         }
 
-        public async Task<IQueryable<Product>> getAllProduct()
+        public void deleteProduct(Product product)
         {
-            IQueryable<Product> productList = _dbContext.Productes
-                                       .OrderByDescending(x => x.Date_Create)
-                                       .AsQueryable();
+            _dbContext.Productes.Remove(product);
+
+        }
+
+        public async Task<IQueryable<Product>> getAllProductasQuerable()
+        {
+            IQueryable<Product> productList = _dbContext.Productes.AsQueryable();
+                                    //     .OrderByDescending(x => x.Date_Create)
+                                    //    .AsQueryable();
             return productList;
+        }
+
+        public async Task<bool> Complete()
+        {
+            return await _dbContext.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> findProductByMatricule(Product product)
+        {
+            return await _dbContext.Productes.AnyAsync(x => x.Matricule == product.Matricule);
+        }
+
+        public async Task<Product> findProductBySlug(Guid slug)
+        {
+            return await _dbContext.Productes
+               .AsNoTracking()
+               .FirstOrDefaultAsync(x => x.Slug == slug);
+        }
+
+        public void editProduct(Product product)  ///productDto
+        {
+             _dbContext.Entry(product).State = EntityState.Modified;
         }
     }
 }
